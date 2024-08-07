@@ -12,7 +12,7 @@ const Home = () => {
           <MainCanvas />
         </div>
       </div>
-      <div className="bg-black flex lg:hidden justify-center h-[100vh] text-white items-center">
+      <div className="bg-black flex md:hidden justify-center h-[100vh] text-white items-center">
         <h1>Rotate the phone </h1>
 
 
