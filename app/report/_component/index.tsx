@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import html2pdf from 'html2pdf.js';
+// import html2pdf from 'html2pdf.js';
 import useNegativeFormStore from "@/store/negativeGridCostStore";
 import usePositiveFormStore from "@/store/positiveGridCostStore";
 import useBatteryStore from "@/store/batteryStore";
@@ -23,21 +23,21 @@ const ReportPageComponent = () => {
     const positivePastingPerPiece = positivePasting?.costPerPlate || 0;
     const negativePastingPerPiece = negativePasting?.costPerPlate || 0;
 
-    const downloadPDF = () => {
-        setTimeout(() => { // Add a delay to ensure content is rendered
-            const element = reportRef.current;
-            if (element) {
-                const opt = {
-                    margin: 1,
-                    filename: 'report.pdf',
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2 },
-                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-                };
-                html2pdf().from(element).set(opt).save();
-            }
-        }, 100); // Adjust delay if necessary
-    };
+    // const downloadPDF = () => {
+    //     setTimeout(() => { // Add a delay to ensure content is rendered
+    //         const element = reportRef.current;
+    //         if (element) {
+    //             const opt = {
+    //                 margin: 1,
+    //                 filename: 'report.pdf',
+    //                 image: { type: 'jpeg', quality: 0.98 },
+    //                 html2canvas: { scale: 2 },
+    //                 jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    //             };
+    //             html2pdf().from(element).set(opt).save();
+    //         }
+    //     }, 100); // Adjust delay if necessary
+    // };
 
     return (
         <div className="bg-gray-900 min-h-screen p-6">
@@ -168,12 +168,12 @@ const ReportPageComponent = () => {
                 </div>
 
                 <div className="p-6">
-                    <button
+                    {/* <button
                         onClick={downloadPDF}
                         className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
                     >
                         Download as PDF
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </div>
