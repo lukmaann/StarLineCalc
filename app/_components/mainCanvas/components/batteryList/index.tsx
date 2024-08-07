@@ -16,7 +16,7 @@ const batteries = ["SL35",
     "SL130",
     "SL150",
     "SL180",
-    "SLb23"
+    "B23"
 ]
 
 const BatteryList = () => {

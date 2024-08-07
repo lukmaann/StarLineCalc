@@ -182,7 +182,7 @@ interface BatteryItem {
       positivePlates: 72,
       negativePlates: 78,
     },
-    SLb23: {
+    B23: {
       container: 306,
       pvcSepratorQt: 30,
       lead: 1.2,
