@@ -231,7 +231,7 @@ const FinalCosting: React.FC = () => {
     };
 
     return (
-        <div className="bg-gradient-to-bl from-black via-gray-900 to-gray-800 border border-t-0 border-r-2 border-b-2 rounded-md">
+        <div className="bg-gradient-to-bl from-black via-gray-900 to-gray-800 border border-t-0 border-r-2 border-b-2 rounded-md max-lg:w-[90%]">
             <h1 className="bg-gradient-to-br from-green-500 via-green-900 to-green-500 text-white font-bold p-2 rounded-t-md">
                 {hindi ? "फाइनल कॉस्टिंग" : "Final Costing"} For {battery}
             </h1>

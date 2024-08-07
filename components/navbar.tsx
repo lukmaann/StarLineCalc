@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils"
 const NavBar = () => {
     const {language,setLanguage}=useStore();
     return (
-        <nav className="w-full border-b  border-b-gray-800 p-2 flex justify-start bg-black  border-white font-bold text-white items-center">
+        <nav className="w-full border-b   border-b-gray-800 p-2 flex justify-start  bg-black  border-white font-bold text-white items-center">
             <div className="flex w-full justify-between items-center">
             <Image src={"/starlinelogo.webp"} width={150} height={100} alt="logo" />
             <div className="flex">

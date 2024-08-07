@@ -156,7 +156,7 @@ const NegativePastCost: React.FC = () => {
     };
 
     return (
-        <div className="bg-gradient-to-bl from-black via-gray-900 to-gray-800 border border-t-0 border-r-2 border-b-2 rounded-md">
+        <div className="bg-gradient-to-bl from-black via-gray-900 to-gray-800 border border-t-0 border-r-2 border-b-2 rounded-md max-lg:w-[90%]">
             <h1 className="bg-gradient-to-br from-blue-500 via-blue-900 to-blue-500 text-white font-bold p-2 rounded-t-md">
                 {hindi ? "नेगेटिव पेस्ट लागत" : "Negative Paste Costing"}
             </h1>

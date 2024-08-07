@@ -63,7 +63,7 @@ const PositiveGridCost = () => {
     }, [newRawPrice, setOldRawPrice]);
 
     return (
-        <div className="bg-gradient-to-bl m-2 from-black via-gray-900 to-gray-800 border border-t-0 w-[50%] border-r-2 border-b-2 rounded-md">
+        <div className="bg-gradient-to-bl m-2 from-black via-gray-900 to-gray-800 border border-t-0 w-[50%] border-r-2 border-b-2 rounded-md max-lg:w-[45%]">
             <h1 className="bg-gradient-to-br from-red-500 via-red-900 to-red-500 text-white font-bold p-2 rounded-t-md">
                 {hindi ? "पॉजिटिव ग्रिड कॉस्टिंग" : "Positive Grid Costing"}
             </h1>
