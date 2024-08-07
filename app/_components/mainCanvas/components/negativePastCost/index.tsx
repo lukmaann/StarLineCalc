@@ -125,7 +125,7 @@ const NegativePastCost: React.FC = () => {
                 (other || 0);
 
             const negativeGridCostingPerPiece = Math.ceil(negativeStore.costPerPiece / 2);
-            const pastingCostPerPiece = Math.ceil((totalAmount / gridQuantity!)/2);
+            const pastingCostPerPiece = Math.ceil((totalAmount / gridQuantity!));
 
             negativePastingStore.setTotalAmount(totalAmount);
             negativePastingStore.setTotalPlates(totalNegativePlates);

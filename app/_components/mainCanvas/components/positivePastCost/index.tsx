@@ -78,7 +78,7 @@ const PositivePastCost: React.FC = () => {
 
             const negativeGridCostingPerPiece = Math.ceil(positiveStore.costPerPiece / 2);
             // const pastingCostPerPiece = Math.ceil(totalAmount / gridQuantity! + negativeGridCostingPerPiece);
-            const pastingCostPerPiece = Math.ceil(totalAmount / gridQuantity! )/2;
+            const pastingCostPerPiece = Math.ceil(totalAmount / gridQuantity! );
 
 
 
