@@ -1,5 +1,5 @@
 // src/store/costStore.ts
-import create from 'zustand';
+import {create} from 'zustand';
 
 interface CostState {
     positivePlatesTotal: number;

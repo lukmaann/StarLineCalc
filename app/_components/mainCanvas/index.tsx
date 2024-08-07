@@ -16,8 +16,8 @@ import useCostStore from "@/store/finalStore"
 
 const MainCanvas = () => {
     const costStore=useCostStore();
-    return <div className="bg-black w-full max-lg:px-0   shadow-md  px-10 text-white py-2">
-        <div className=" border-b flex justify-between flex-wrap max-lg:justify-center py-10">
+    return <div className="bg-black w-full max-lg:px-0   shadow-md  px-10 text-white py-2 ">
+        <div className=" border-b flex justify-between max-lg:flex-wrap max-lg:justify-center py-10">
             <PositiveGridCost />
             <NegativeGridCosting />
             {/* <PositiveGridSummary /> */}

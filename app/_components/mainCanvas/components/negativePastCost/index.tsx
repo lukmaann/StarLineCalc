@@ -237,7 +237,7 @@ const NegativePastCost: React.FC = () => {
                             <div className="m-1"><Input {...formik.getFieldProps("oxideWeight")} className="h-7 w-[100px] text-black" type="number" /></div>
                         </div>
                         <div className="flex bg-yellow-400 rounded-md px-2 h-10 items-center m-2 text-black">
-                            <div className="m-1 text-sm">{hindi ? "ऑक्साइड वजन" : "Grid Quantity"}</div>
+                            <div className="m-1 text-sm">{hindi ? "ग्रिड क्वांटिटी" : "Grid Quantity"}</div>
                             <div className="m-1"><Input {...formik.getFieldProps("gridQuantity")} className="h-7 w-[100px] text-black" type="number" /></div>
                         </div>
                     </div>

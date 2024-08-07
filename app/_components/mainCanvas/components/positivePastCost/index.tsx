@@ -111,7 +111,7 @@ const PositivePastCost: React.FC = () => {
     };
 
     return (
-        <div className="bg-gradient-to-bl from-black via-gray-900 to-gray-800 border border-t-0 border-r-2 border-b-2 rounded-md max-lg:w-[90%]">
+        <div className="bg-gradient-to-bl  from-black via-gray-900 to-gray-800 border border-t-0 border-r-2 border-b-2 rounded-md max-lg:w-[90%]">
             <h1 className="bg-gradient-to-br from-red-500 via-red-900 to-red-500 text-white font-bold p-2 rounded-t-md">
                 {hindi ? "पॉजिटिव पेस्ट कॉस्टिंग" : "Positive Paste Costing"}
             </h1>
@@ -166,7 +166,7 @@ const PositivePastCost: React.FC = () => {
                             <div className="m-1"><Input {...formik.getFieldProps("oxideWeight")} className="h-7 w-[100px] text-black" type="number" /></div>
                         </div>
                         <div className="flex bg-yellow-400 px-2 rounded-md  h-10 items-center m-2 text-black">
-                            <div className="m-1 text-sm">{hindi ? "ऑक्साइड वजन" : "Grid Quantity"}</div>
+                            <div className="m-1 text-sm">{hindi ? "ग्रिड क्वांटिटी" : "Grid Quantity"}</div>
                             <div className="m-1"><Input {...formik.getFieldProps("gridQuantity")} className="h-7 w-[100px] text-black" type="number" /></div>
                         </div>
                     </div>

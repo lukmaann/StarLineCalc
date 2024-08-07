@@ -9,7 +9,7 @@ const PositiveGridSummary = () => {
     const { totalPrice, totalRawMaterial, totalGrids, costPerPiece } = useFormStore();
 
     return (
-        <div className="text-sm w-[300px] flex flex-col justify-end p-2 text-white bg-gradient-to-bl from-gray-800 via-gray-700 to-gray-600 border border-gray-500 shadow-lg">
+        <div className="text-sm w-[300px] max-lg:text-[10px] flex flex-col justify-end p-2 text-white bg-gradient-to-bl from-gray-800 via-gray-700 to-gray-600 border border-gray-500 shadow-lg">
             <div className="px-2 mb-1 ">
                 {hindi ? (
                     <>
