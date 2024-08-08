@@ -24,21 +24,21 @@ const ReportPageComponent = () => {
     const positivePastingPerPiece = positivePasting?.costPerPlate || 0;
     const negativePastingPerPiece = negativePasting?.costPerPlate || 0;
 
-    const downloadPDF = () => {
-        setTimeout(() => { // Add a delay to ensure content is rendered
-            const element = reportRef.current;
-            if (element) {
-                const opt = {
-                    margin: 1,
-                    filename: 'report.pdf',
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2 },
-                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-                };
-                html2pdf().from(element).set(opt).save();
-            }
-        }, 100); // Adjust delay if necessary
-    };
+    // const downloadPDF = () => {
+    //     setTimeout(() => { // Add a delay to ensure content is rendered
+    //         const element = reportRef.current;
+    //         if (element) {
+    //             const opt = {
+    //                 margin: 1,
+    //                 filename: 'report.pdf',
+    //                 image: { type: 'jpeg', quality: 0.98 },
+    //                 html2canvas: { scale: 2 },
+    //                 jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    //             };
+    //             html2pdf().from(element).set(opt).save();
+    //         }
+    //     }, 100); // Adjust delay if necessary
+    // };
 
     return (
         <div className="bg-black p-4 min-h-screen">
@@ -127,7 +127,7 @@ const ReportPageComponent = () => {
                         </div>
                     </div>
                 </div>
-                <div className="p-4 flex justify-between">
+                {/* <div className="p-4 flex justify-between">
                     <Link href={"/"}>
                         <button className="bg-gray-500 text-white px-4 text-sm py-2 rounded hover:bg-gray-700">Back to calculator</button>
                     </Link>
@@ -137,7 +137,7 @@ const ReportPageComponent = () => {
                     >
                         Download as PDF
                     </button>
-                </div>
+                </div> */}
             </div>
         </div>
     );
