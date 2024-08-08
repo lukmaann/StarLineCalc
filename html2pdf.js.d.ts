@@ -4,10 +4,19 @@ declare module 'html2pdf.js' {
         filename?: string;
         image?: { type: string; quality: number };
         html2canvas?: object;
-        jsPDF?: object;
+        jsPDF?: {
+            unit?: string;
+            format?: string | string[];
+            orientation?: string;
+        };
     }
 
-    function html2pdf(element: HTMLElement, options?: Html2PdfOptions): void;
+    function html2pdf(): {
+        from(element: HTMLElement): {
+            set(options: Html2PdfOptions): any;
+            save(): void;
+        };
+    }
 
     export default html2pdf;
 }
