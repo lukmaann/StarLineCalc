@@ -1,5 +1,6 @@
 import MainCanvas from "./_components/mainCanvas"
 import NavBar from "../components/navbar"
+import Footer from "@/components/footer"
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
         <div className="" >
           <NavBar />
           <MainCanvas />
+          <Footer/>
         </div>
       </div>
       <div className="bg-black flex md:hidden justify-center h-[100vh] text-white items-center">

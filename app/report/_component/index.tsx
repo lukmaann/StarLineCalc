@@ -8,6 +8,7 @@ import useBatteryStore from "@/store/batteryStore";
 import useCostStore from "@/store/finalStore";
 import usePositivePastingFormStore from "@/store/positivePastingStore";
 import useNegativePastingFormStore from "@/store/negativePastingStore";
+import Link from 'next/link';
 
 const ReportPageComponent = () => {
     const positiveGrid = usePositiveFormStore();
@@ -39,8 +40,12 @@ const ReportPageComponent = () => {
     //     }, 100); // Adjust delay if necessary
     // };
 
+
+
+    
+
     return (
-        <div className="bg-gray-900 min-h-screen p-6">
+        <div className="bg-black m-auto min-h-screen w-[500px] p-6">
             <div  className="bg-white shadow-lg rounded-lg overflow-hidden w-full w-[900px] mx-auto">
                 <div ref={reportRef}>
 
@@ -165,6 +170,16 @@ const ReportPageComponent = () => {
                         </tbody>
                     </table>
                 </div>
+                </div>
+                <div className="p-6">
+                   <Link href={"/"}>
+                   <button
+               
+               className="bg-gray-500 text-white px-4 text-sm py-2 rounded hover:bg-gray-700"
+           >
+               Back to calculator
+           </button>
+                   </Link>
                 </div>
 
                 <div className="p-6">
