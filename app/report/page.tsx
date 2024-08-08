@@ -3,9 +3,10 @@ import ReportPageComponent from "./_component"
 import Footer from "@/components/footer"
 
 const reportPage=()=>{
-    return <main className="bg-black flex flex-col justify-center p-4">
+    return <main className="bg-black  flex flex-col justify-center p-4 max-sm:p-0  ">
         <NavBar/>
         <ReportPageComponent/>
+
         <Footer/>
 
 
