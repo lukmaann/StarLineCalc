@@ -127,17 +127,17 @@ const ReportPageComponent = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="p-4 flex justify-between">
+                <div className="p-4 flex justify-between">
                     <Link href={"/"}>
                         <button className="bg-gray-500 text-white px-4 text-sm py-2 rounded hover:bg-gray-700">Back to calculator</button>
                     </Link>
-                    <button
+                    {/* <button
                         onClick={downloadPDF}
                         className="bg-blue-500 text-white px-4 text-sm py-2 rounded hover:bg-blue-700"
                     >
                         Download as PDF
-                    </button>
-                </div> */}
+                    </button> */}
+                </div>
             </div>
         </div>
     );
