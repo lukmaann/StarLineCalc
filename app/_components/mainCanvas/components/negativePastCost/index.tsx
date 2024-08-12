@@ -93,7 +93,7 @@ const NegativePastCost: React.FC = () => {
             electricity: 0,
             other: 0,
             oxideWeight: 0.214,
-            gridQuantity:2600,
+            gridQuantity:4000,
         },
         validateOnBlur: false,
         validateOnChange: false,
