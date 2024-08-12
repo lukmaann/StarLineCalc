@@ -9,6 +9,7 @@ import useCostStore from "@/store/finalStore";
 import usePositivePastingFormStore from "@/store/positivePastingStore";
 import useNegativePastingFormStore from "@/store/negativePastingStore";
 import Link from 'next/link';
+import Image from 'next/image';
 
 const ReportPageComponent = () => {
     const positiveGrid = usePositiveFormStore();
@@ -22,18 +23,22 @@ const ReportPageComponent = () => {
     return (
         <div className="bg-black p-4 min-h-screen">
             <div className="bg-white shadow-lg rounded-lg overflow-hidden mx-auto max-w-full md:max-w-4xl">
-                <div ref={reportRef}>
-                    <div className="p-4 border-b border-gray-200">
+                <div ref={reportRef} className='p-5 '>
+
+                    <Image src={"/starlinelogo.webp"} width={100} height={100} alt="logo" />
+                    <div className="p-3 border-b border-gray-00">
                         <h1 className="text-xl md:text-2xl font-semibold text-gray-800">Final Report for {battery?.battery || 'Unknown Battery'}</h1>
+
                     </div>
                     <div className="p-4">
+                        <p className="text-gray-600 mb-4 text-sm">This is the total estimated amount for manufacturing the {battery?.battery} battery.</p>
                         <div className="overflow-x-auto">
-                            <table className="min-w-full divide-y divide-gray-300">
-                                <thead className="bg-gray-50">
+                            <table className="min-w-full divide-y border border-black divide-gray-300">
+                                <thead className="bg-black text-white ">
                                     <tr>
-                                        <th className="px-4 py-2 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Serial Number</th>
-                                        <th className="px-4 py-2 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Item</th>
-                                        <th className="px-4 py-2 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Total Price</th>
+                                        <th className="px-4 py-2 text-left text-xs font-medium  uppercase tracking-wider">Serial Number</th>
+                                        <th className="px-4 py-2 text-left text-xs font-medium  uppercase tracking-wider">Item</th>
+                                        <th className="px-4 py-2 text-left text-xs font-medium  uppercase tracking-wider">Total Price</th>
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-gray-300">
@@ -98,8 +103,8 @@ const ReportPageComponent = () => {
                                         <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-600">₹{cost.labourCost}</td>
                                     </tr>
                                     <tr>
-                                        <td colSpan={2} className="px-4 py-2 text-sm font-bold text-gray-900 bg-gray-100">Total</td>
-                                        <td className="px-4 py-2 text-sm font-bold text-gray-900 bg-gray-100">₹{cost.finalBatteryPrice}</td>
+                                        <td colSpan={2} className="px-4 py-2 border-t border-black text-sm font-bold text-gray-900 bg-gray-100">Total</td>
+                                        <td className="px-4 py-2 text-sm font-bold border-t border-black text-gray-900 bg-gray-100">₹{cost.finalBatteryPrice}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -113,7 +118,7 @@ const ReportPageComponent = () => {
                     <ReactToPrint
                         trigger={() => <button className="bg-blue-500 text-white px-4 text-sm py-2 rounded hover:bg-blue-700">Download as PDF</button>}
                         content={() => reportRef.current}
-                        documentTitle={battery?.battery+"Report"}
+                        documentTitle={battery?.battery + "Report"}
                     />
                 </div>
             </div>
