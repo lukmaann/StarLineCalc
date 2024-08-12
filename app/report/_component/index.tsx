@@ -113,7 +113,7 @@ const ReportPageComponent = () => {
                     <ReactToPrint
                         trigger={() => <button className="bg-blue-500 text-white px-4 text-sm py-2 rounded hover:bg-blue-700">Download as PDF</button>}
                         content={() => reportRef.current}
-                        documentTitle="Report"
+                        documentTitle={battery?.battery+"Report"}
                     />
                 </div>
             </div>
