@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from 'react';
-import html2pdf from 'html2pdf.js'; 
+import React, { useRef } from 'react';
+import ReactToPrint from 'react-to-print';
 import useNegativeFormStore from "@/store/negativeGridCostStore";
 import usePositiveFormStore from "@/store/positiveGridCostStore";
 import useBatteryStore from "@/store/batteryStore";
@@ -9,8 +9,6 @@ import useCostStore from "@/store/finalStore";
 import usePositivePastingFormStore from "@/store/positivePastingStore";
 import useNegativePastingFormStore from "@/store/negativePastingStore";
 import Link from 'next/link';
-import { useEffect } from 'react';
-
 
 const ReportPageComponent = () => {
     const positiveGrid = usePositiveFormStore();
@@ -20,38 +18,6 @@ const ReportPageComponent = () => {
     const battery = useBatteryStore();
     const cost = useCostStore();
     const reportRef = useRef(null);
-
-    const positiveGridPerPiece = positiveGrid?.costPerPiece ? Math.ceil(positiveGrid.costPerPiece / 2) : 0;
-    const negativeGridPerPiece = negativeGrid?.costPerPiece ? Math.ceil(negativeGrid.costPerPiece / 2) : 0;
-    const positivePastingPerPiece = positivePasting?.costPerPlate || 0;
-    const negativePastingPerPiece = negativePasting?.costPerPlate || 0;
-
-    
-    // useEffect(() => {
-    //     const downloadPDF = () => {
-    //         setTimeout(() => { // Add a delay to ensure content is rendered
-    //             const element = reportRef.current;
-    //             if (element) {
-    //                 const opt = {
-    //                     margin: 1,
-    //                     filename: 'report.pdf',
-    //                     image: { type: 'jpeg', quality: 0.98 },
-    //                     html2canvas: { scale: 2 },
-    //                     jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-    //                 };
-    //                 html2pdf().from(element).set(opt).save();
-    //             }
-    //         }, 100); // Adjust delay if necessary
-    //     };
-
-    //     // Attach downloadPDF to some client-side event or button
-    //     document.getElementById('download-btn')?.addEventListener('click', downloadPDF);
-
-    //     return () => {
-    //         // Cleanup event listener
-    //         document.getElementById('download-btn')?.removeEventListener('click', downloadPDF);
-    //     };
-    // }, []);
 
     return (
         <div className="bg-black p-4 min-h-screen">
@@ -144,12 +110,11 @@ const ReportPageComponent = () => {
                     <Link href={"/"}>
                         <button className="bg-gray-500 text-white px-4 text-sm py-2 rounded hover:bg-gray-700">Back to calculator</button>
                     </Link>
-                    {/* <button
-                        id="download-btn"
-                        className="bg-blue-500 text-white px-4 text-sm py-2 rounded hover:bg-blue-700"
-                    >
-                        Download as PDF
-                    </button> */}
+                    <ReactToPrint
+                        trigger={() => <button className="bg-blue-500 text-white px-4 text-sm py-2 rounded hover:bg-blue-700">Download as PDF</button>}
+                        content={() => reportRef.current}
+                        documentTitle="Report"
+                    />
                 </div>
             </div>
         </div>
