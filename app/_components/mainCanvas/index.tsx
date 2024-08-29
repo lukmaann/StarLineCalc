@@ -21,8 +21,8 @@ const MainCanvas = () => {
     const handleGenerateReport = () => {
         setLoading(true);
         setTimeout(() => {
-            setLoading(false);
             router.push('/report');
+            setLoading(false);
         }, 1500); // 1 second delay
     };
 
