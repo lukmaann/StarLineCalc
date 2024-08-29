@@ -23,7 +23,7 @@ const MainCanvas = () => {
         setTimeout(() => {
             setLoading(false);
             router.push('/report');
-        }, 1000); // 1 second delay
+        }, 1500); // 1 second delay
     };
 
     return (
