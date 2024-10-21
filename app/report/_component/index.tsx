@@ -12,7 +12,13 @@ import useStore from "@/store/languageStore"; // Assuming this is your language 
 import Link from 'next/link';
 import Image from 'next/image';
 
+
 const ReportPageComponent = () => {
+    const currentDate = new Date();
+    const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}/${(currentDate.getMonth() + 1).toString().padStart(2, '0')}/${currentDate.getFullYear().toString().slice(-2)}`;
+   
+
+
     const { language } = useStore();
     const hindi = language === 'hindi';
     const positiveGrid = usePositiveFormStore();
@@ -27,15 +33,21 @@ const ReportPageComponent = () => {
         <div className="bg-black p-4 min-h-screen">
             <div className="bg-white shadow-lg rounded-lg overflow-hidden mx-auto max-w-full md:max-w-4xl">
                 <div ref={reportRef} className='p-5 '>
-                    <Image src={"/starlinelogo.webp"} width={100} height={100} alt="logo" />
+                    <div className='flex justify-between'>
+                        <Image src={"/starlinelogo.webp"} width={100} height={100} alt="logo" />
+                        <h1 className='text-foreground'><span className='font-bold'>Date:</span> {formattedDate}</h1>
+
+
+                    </div>
                     <div className="p-3 border-b border-gray-00">
                         <h1 className="text-xl md:text-2xl font-semibold text-gray-800">
                             {hindi ? "अंतिम रिपोर्ट" : "Final Report"} {battery?.battery || (hindi ? 'अज्ञात बैटरी' : 'Unknown Battery')}
                         </h1>
                     </div>
+              
                     <div className="p-4">
                         <p className="text-gray-600 mb-4 text-sm">
-                            {hindi ? "यह अनुमानित राशि है जो बैटरी के निर्माण के लिए है:" : "This is the total estimated amount for manufacturing the"} {battery?.battery}.
+                            {hindi ? "यह अनुमानित राशि है जो बैटरी के निर्माण के लिए है:" : "This is the total estimated amount for manufacturing the"} {battery?.battery} .
                         </p>
                         <div className="overflow-x-auto">
                             <table className="min-w-full divide-y border border-black divide-gray-300">
@@ -83,7 +95,7 @@ const ReportPageComponent = () => {
                     <ReactToPrint
                         trigger={() => <button className="bg-blue-500 text-white px-4 text-sm py-2 rounded hover:bg-blue-700">{hindi ? "पीडीएफ के रूप में डाउनलोड करें" : "Download as PDF"}</button>}
                         content={() => reportRef.current}
-                        documentTitle={battery?.battery + " Report"}
+                        documentTitle={battery?.battery + " Report "}
                     />
                 </div>
             </div>
