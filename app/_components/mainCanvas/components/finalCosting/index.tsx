@@ -280,7 +280,7 @@ const FinalCosting: React.FC = () => {
                         <div className="m-1"><Input {...formik.getFieldProps("dmWaterTransport")} className="h-7 text-black" type="number" /></div>
                         <div className="m-1">{calculateTotal('dmWaterWeight', 'dmWaterPrice', 'dmWaterTransport')}</div> */}
 
-                        <div className="m-1">{hindi ? "एसिड" : "Acid (liters)"}</div>
+                        <div className="m-1">{hindi ? "एसिड" : "Acid "}</div>
                         <div className="m-1"><Input {...formik.getFieldProps("acidQuantity")} className="h-7 text-black" type="number" /></div>
                         <div className="m-1"><Input {...formik.getFieldProps("acidPrice")} className="h-7 text-black" type="number" /></div>
                         <div className="m-1"><Input {...formik.getFieldProps("acidTransport")} className="h-7 text-black" type="number" /></div>

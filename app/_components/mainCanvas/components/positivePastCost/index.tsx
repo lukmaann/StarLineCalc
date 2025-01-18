@@ -136,13 +136,13 @@ const PositivePastCost: React.FC = () => {
                         <div className="m-1"><Input {...formik.getFieldProps("dinalFiberTransport")} className="h-7 text-black" type="number" /></div>
                         <div className="m-1">{calculateTotal('dinalFiberWeight', 'dinalFiberPrice', 'dinalFiberTransport')}</div>
 
-                        <div className="m-1">{hindi ? "डीएम वाटर" : "DM Water"}</div>
+                        <div className="m-1">{hindi ? "डीएम वाटर" : "DM Water (Liters)"}</div>
                         <div className="m-1"><Input {...formik.getFieldProps("dmWaterWeight")} className="h-7 text-black" type="number" /></div>
                         <div className="m-1"><Input {...formik.getFieldProps("dmWaterPrice")} className="h-7 text-black" type="number" /></div>
                         <div className="m-1"><Input {...formik.getFieldProps("dmWaterTransport")} className="h-7 text-black" type="number" /></div>
                         <div className="m-1">{calculateTotal('dmWaterWeight', 'dmWaterPrice', 'dmWaterTransport')}</div>
 
-                        <div className="m-1">{hindi ? "एसिड" : "Acid (liters)"}</div>
+                        <div className="m-1">{hindi ? "एसिड" : "Acid "}</div>
                         <div className="m-1"><Input {...formik.getFieldProps("acidWeight")} className="h-7 text-black" type="number" /></div>
                         <div className="m-1"><Input {...formik.getFieldProps("acidPrice")} className="h-7 text-black" type="number" /></div>
                         <div className="m-1"><Input {...formik.getFieldProps("acidTransport")} className="h-7 text-black" type="number" /></div>
