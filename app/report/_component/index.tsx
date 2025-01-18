@@ -16,7 +16,7 @@ import Image from 'next/image';
 const ReportPageComponent = () => {
     const currentDate = new Date();
     const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}/${(currentDate.getMonth() + 1).toString().padStart(2, '0')}/${currentDate.getFullYear().toString().slice(-2)}`;
-   
+
 
 
     const { language } = useStore();
@@ -44,7 +44,7 @@ const ReportPageComponent = () => {
                             {hindi ? "अंतिम रिपोर्ट" : "Final Report"} {battery?.battery || (hindi ? 'अज्ञात बैटरी' : 'Unknown Battery')}
                         </h1>
                     </div>
-              
+
                     <div className="p-4">
                         <p className="text-gray-600 mb-4 text-sm">
                             {hindi ? "यह अनुमानित राशि है जो बैटरी के निर्माण के लिए है:" : "This is the total estimated amount for manufacturing the"} {battery?.battery} .
@@ -85,9 +85,26 @@ const ReportPageComponent = () => {
                                     </tr>
                                 </tbody>
                             </table>
+
                         </div>
+                        <div className='mt-4'>
+                            <ul>
+                                <li>This is the estimated price for manufacturing the battery as of <span className="font-bold"></span> {formattedDate}. </li>
+                                <li> Please note that the price may fluctuate in the future based on changes in raw material costs.
+                                </li>
+
+                            </ul>
+
+
+
+                        </div>
+
                     </div>
+
+
+
                 </div>
+
                 <div className="p-4 flex justify-between">
                     <Link href={"/"}>
                         <button className="bg-gray-500 text-white px-4 text-sm py-2 rounded hover:bg-gray-700">{hindi ? "कल्कुलेटर पर वापस जाएं" : "Back to calculator"}</button>
